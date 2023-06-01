@@ -1,9 +1,9 @@
-function ShopItem() {
+function ShopItem(props) {
     return (
         <div className="shop-item">
-                <h2 className="shop-title">Parduotuve 1</h2>
+                <h2 className="shop-title">{props.title}</h2>
                 <ul className="shop-address-list">
-                  <li>Phone: <a href="tel:+37045431321">+37045431321</a></li>
+                  <li>Phone: <a href={`tel:${props.phone}`}>{props.phone}</a></li>
                   <li>
                     Email:
                     <a href="mailto:info@parduotuve.lt">info@parduotuve.lt</a>

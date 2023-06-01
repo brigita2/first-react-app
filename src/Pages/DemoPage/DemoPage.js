@@ -1,4 +1,6 @@
+import './DemoPage.css'
 import logo from './logo.svg';
+
 function DemoPage() {
 return (
     <div className="App">

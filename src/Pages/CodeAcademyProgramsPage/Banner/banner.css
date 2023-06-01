@@ -1,0 +1,45 @@
+.banner {
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    background-color: white;
+    background-image: url('../Banner/banner.jpg');
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: 70% 75%;
+  }
+  
+  .banner a {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .banner-title {
+    font-size: 25px;
+    font-weight: 700;
+  }
+  
+  .banner:hover .arrow-icon path {
+    fill: green;
+  }
+  @media screen and (max-width: 649px) {
+    .banner {
+      padding-bottom: 195px;
+      background-size: 100%;
+      background-position: right bottom;
+    }
+  
+    .banner-title {
+      display: flex;
+      flex-direction: column;
+      row-gap: 5px;
+    }
+  }
+  @media screen and (max-width: 449px) {
+    .banner {
+      background-size: 150%;
+      background-position: center bottom;
+    }
+  }
+  

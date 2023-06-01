@@ -1,0 +1,44 @@
+    body {
+    background-color: #f2f2f2;
+    margin: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .color-pink {
+    color: #ff00e9;
+  }
+  
+  .color-black {
+    color: black;
+  }
+  
+  
+  .programs-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 30px;
+  }
+  
+  @media screen and (max-width: 899px) {
+    .programs-wrapper {
+      grid-template-columns: 2fr 3fr;
+    }
+  }
+  
+  @media screen and (max-width: 649px) {
+    .page-content {
+      margin-top: 160px;
+    }
+  
+    .programs-wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+  

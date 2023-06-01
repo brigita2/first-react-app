@@ -1,0 +1,33 @@
+.programs-filter-form {
+    background-color: white;
+    padding: 30px;
+    position: sticky;
+    top: 20px;
+  }
+  
+  .programs-filter-form .form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  fieldset {
+    border: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+  
+  .programs-filter-form fieldset .form-control {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+  
+  .button-filter {
+    display: none;
+  }
+  
+  @media screen and (max-width: 649px) {
+    .programs-filter-form {
+      display: none;
+    }
+  }
