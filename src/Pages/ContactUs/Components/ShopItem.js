@@ -1,17 +1,28 @@
-function ShopItem(props) {
+function ShopItem({ title, email, address, phone, addressLink }) {
+
+if (!title) {
+  return '';
+}
+
+const phoneElement = phone ? <li>Phone: <a href={`tel:${phone}`}>{phone}</a></li> : ''
+const emailElement = email ? (<li>Email: <a href={`mailto:${email}`}>{email}</a></li>) : ('')  //paprasti skliaustai apgaubia funkcija ir return
+
+let addressElement = '';
+if (address) {
+  if (addressLink) {
+    addressElement = <li>Address: <a href={addressLink} target="_blank">{address}</a></li>;
+  } else {
+    addressElement = <li>Address: {address}</li>;
+  }
+}
+
     return (
         <div className="shop-item">
-                <h2 className="shop-title">{props.title}</h2>
+                <h2 className="shop-title">{title}</h2>
                 <ul className="shop-address-list">
-                  <li>Phone: <a href={`tel:${props.phone}`}>{props.phone}</a></li>
-                  <li>
-                    Email:
-                    <a href="mailto:info@parduotuve.lt">info@parduotuve.lt</a>
-                  </li>
-                  <li>
-                    Address:
-                    <a href="/#" target="_blank">Vilniaus g. 20, Vilnius</a>
-                  </li>
+                  {phoneElement}
+                  {emailElement}
+                  {addressElement}
                 </ul>
               </div>
     )

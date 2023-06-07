@@ -1,0 +1,8 @@
+.notAvailable {
+    text-decoration: line-through;
+    opacity: 0.3;
+}
+.available {
+    color: green;
+    font-weight: 600;
+}

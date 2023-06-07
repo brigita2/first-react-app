@@ -1,84 +1,93 @@
+import ProgramItem from '../ProgramItem/ProgramItem';
 import './programsList.css';
 
-function ProgramItem() {
+function ProgramList() {
+
+  const programsData = [
+    {
+      programLink: '/#',
+      image: 'https://codeacademy.lt/wp-content/uploads/2022/08/Black-18.svg',
+      title: '„Salesforce“ CRM – pradedančių',
+      description: '„Salesforce“ – įmonės operacinė sistema, leidžianti skirtingiems padaliniams sklandžiai dalintis informacija, sėkmingiau aptarnauti klientus, didinti produktyvumą, o svarbiausia – efektyviau išnaudoti sukauptus duomenis.',
+      level: '1 lygis',
+      time: 'Vakarais',
+      label: 'Naujas',
+    },
+    {
+      programLink: '/#',
+      image: 'https://codeacademy.lt/wp-content/uploads//2021/03/Python_dark-1.svg',
+      title: 'Python – pradedantiesiems užimtiems asmenims (223002626)',
+      description: 'Python – aiškiai suprantama ir greitai išmokstama, tačiau labai universali ir galinga programavimo kalba, todėl šią kalbą išmokti yra nesunku, o ja naudotis – smagu ir patogu.',
+      level: '1 lygis',
+      time: 'Vakarais',
+      label: 'Finansuojama UŽT',
+    },
+    {
+      programLink: '/#',
+      image: 'https://codeacademy.lt/wp-content/uploads//2021/03/Python_dark-1.svg',
+      title: 'Python programa (223002543)',
+      description: 'Python programuotojų laukia šviesi ateitis - pagrindiniai įgūdžiai pritaikomi konkurencingose ​​pramonės šakose, tokiose kaip dirbtinis intelektas, kibernetinis saugumas ir duomenų mokslas.',
+      level: '2 lygis',
+      time: 'Dienomis',
+      label: 'Naujas',
+    },
+    {
+      programLink: '/#',
+      image: 'https://codeacademy.lt/wp-content/uploads//2021/03/BigData_dark-1.svg',
+      title: 'Duomenų bazės ir analitika (223002691)',
+      description: 'Duomenų mokslas padės nepasimesti tarp galybės duomenų, priimti pagrįstus sprendimus bei numatyti būsimus įvykius pasitelkiant mašininį mokymąsi.',
+      level: '1 lygis',
+      time: 'Vakarais',
+      label: 'Finansuojama UŽT',
+    }
+  ];
     return (
-        <div className="programs-list">
-        <div className="program-item">
-          <a href="/#">
-            <div className="program-main-info">
-              <img className="program-image" src="https://codeacademy.lt/wp-content/uploads/2022/08/Black-18.svg" alt=''/>
-              <h2 className="program-title">„Salesforce“ CRM – pradedančių</h2>
-              <p className="program-description">„Salesforce“ – įmonės operacinė sistema, leidžianti skirtingiems padaliniams sklandžiai dalintis informacija, sėkmingiau aptarnauti klientus, didinti produktyvumą, o svarbiausia – efektyviau išnaudoti sukauptus duomenis.</p>
-            </div>
 
-            <div className="program-features-wrapper">
-              <ul className="program-features-list">
-                <li className="program-feature-item">1 lygis</li>
-                <li className="program-feature-item">Vakarais</li>
-              </ul>
-            </div>
+        programsData.map(program => {
+          
+        })
 
-            <span className="program-extra-info">Naujas</span>
-          </a>
-        </div>
 
-        <div className="program-item">
-          <a href="/#">
-            <div className="program-main-info">
-              <img className="program-image" src="https://codeacademy.lt/wp-content/uploads/2022/08/Black-18.svg" alt=''/>
-              <h2 className="program-title">Python – pradedantiesiems užimtiems asmenims (223002626)</h2>
-              <p className="program-description">Python – aiškiai suprantama ir greitai išmokstama, tačiau labai universali ir galinga programavimo kalba, todėl šią kalbą išmokti yra nesunku, o ja naudotis – smagu ir patogu.</p>
-            </div>
+      //   <div className="programs-list">
+      //     <ProgramItem 
+      //     programLink= '/#'
+      //     image='https://codeacademy.lt/wp-content/uploads/2022/08/Black-18.svg'
+      //     title='„Salesforce“ CRM – pradedančių'
+      //     description='„Salesforce“ – įmonės operacinė sistema, leidžianti skirtingiems padaliniams sklandžiai dalintis informacija, sėkmingiau aptarnauti klientus, didinti produktyvumą, o svarbiausia – efektyviau išnaudoti sukauptus duomenis.'
+      //     level='1 lygis'
+      //     time='Vakarais'
+      //     label='Naujas'
+      //     />
+      //     <ProgramItem 
+      //     programLink= '/#'
+      //     image='https://codeacademy.lt/wp-content/uploads//2021/03/Python_dark-1.svg'
+      //     title='Python – pradedantiesiems užimtiems asmenims (223002626)'
+      //     description='Python – aiškiai suprantama ir greitai išmokstama, tačiau labai universali ir galinga programavimo kalba, todėl šią kalbą išmokti yra nesunku, o ja naudotis – smagu ir patogu.'
+      //     level='1 lygis'
+      //     time='Vakarais'
+      //     label='Finansuojama UŽT'
+      //     />
+      //     <ProgramItem 
+      //     programLink= '/#'
+      //     image='https://codeacademy.lt/wp-content/uploads//2021/03/Python_dark-1.svg'
+      //     title='Python programa (223002543)'
+      //     description='Python programuotojų laukia šviesi ateitis - pagrindiniai įgūdžiai pritaikomi konkurencingose ​​pramonės šakose, tokiose kaip dirbtinis intelektas, kibernetinis saugumas ir duomenų mokslas.'
+      //     level='2 lygis'
+      //     time='Dienomis'
+      //     label='Naujas'
+      //     />
+      //     <ProgramItem 
+      //     programLink= '/#'
+      //     image='https://codeacademy.lt/wp-content/uploads//2021/03/BigData_dark-1.svg'
+      //     title='Duomenų bazės ir analitika (223002691)'
+      //     description='Duomenų mokslas padės nepasimesti tarp galybės duomenų, priimti pagrįstus sprendimus bei numatyti būsimus įvykius pasitelkiant mašininį mokymąsi.'
+      //     level='1 lygis'
+      //     time='Vakarais'
+      //     label='Finansuojama UŽT'
+      //     />
 
-            <div className="program-features-wrapper">
-              <ul className="program-features-list">
-                <li className="program-feature-item">Finansuojama UŽT - dirbantiems</li>
-                <li className="program-feature-item">Vakarais</li>
-              </ul>
-            </div>
-
-            <span className="program-extra-info">Finansuojama UŽT</span>
-          </a>
-        </div>
-        
-        <div className="program-item">
-          <a href="/#">
-            <div className="program-main-info">
-              <img className="program-image" src="https://codeacademy.lt/wp-content/uploads/2022/08/Black-18.svg" alt=''/>
-              <h2 className="program-title">„Salesforce“ CRM – pradedančių</h2>
-              <p className="program-description">„Salesforce“ – įmonės operacinė sistema, leidžianti skirtingiems padaliniams sklandžiai dalintis informacija, sėkmingiau aptarnauti klientus, didinti produktyvumą, o svarbiausia – efektyviau išnaudoti sukauptus duomenis.</p>
-            </div>
-
-            <div className="program-features-wrapper">
-              <ul className="program-features-list">
-                <li className="program-feature-item">1 lygis</li>
-                <li className="program-feature-item">Vakarais</li>
-              </ul>
-            </div>
-
-            <span className="program-extra-info">Naujas</span>
-          </a>
-        </div>
-
-        <div className="program-item">
-          <a href="/#">
-            <div className="program-main-info">
-              <img className="program-image" src="https://codeacademy.lt/wp-content/uploads/2022/08/Black-18.svg" alt=''/>
-              <h2 className="program-title">Python – pradedantiesiems užimtiems asmenims (223002626)</h2>
-              <p className="program-description">Python – aiškiai suprantama ir greitai išmokstama, tačiau labai universali ir galinga programavimo kalba, todėl šią kalbą išmokti yra nesunku, o ja naudotis – smagu ir patogu.</p>
-            </div>
-
-            <div className="program-features-wrapper">
-              <ul className="program-features-list">
-                <li className="program-feature-item">Finansuojama UŽT - dirbantiems</li>
-                <li className="program-feature-item">Vakarais</li>
-              </ul>
-            </div>
-
-            <span className="program-extra-info">Finansuojama UŽT</span>
-          </a>
-        </div>
-      </div>
+      // </div>
     )
 }
-export default ProgramItem;
+
+export default ProgramList;
