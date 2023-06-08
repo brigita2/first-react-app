@@ -1,3 +1,8 @@
+.shopping-item {
+    cursor: pointer;
+}
+
+
 .notAvailable {
     text-decoration: line-through;
     opacity: 0.3;
