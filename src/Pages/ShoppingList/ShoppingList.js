@@ -76,6 +76,7 @@ function ShoppingList() {
             <input type="text" id="shopping-item" name="shopping-item" value={newItem} onChange={itemInputHandler}/>
             <input type="submit" value="Create" />
            </form>
+           
                 <h2>{shoppingList && shoppingList.length > 0 ? 'Shopping List' : 'Your Shopping List is Empty'}</h2>
                 {product && product.length > 0 && (
                     <ul>
