@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Container from "../../Components/Container/Container";
-import CityItem from "./CityItem/CityItem";
+
+import CitiesForm from "../CitiesPage/CitiesForm/CitiesForm";
+import CitiesList from "./CitiesList/CitiesList";
 
 function CitiesPage() {
     let citiesList = [
@@ -75,19 +77,16 @@ function CitiesPage() {
             isCapital: false,
          },
 ];
+    const [cities, setCities] = useState(citiesList);
 
-    const [ cities, setCitiesList ] = useState(citiesList);
+    const citiesUpdateHandler = (city) => {
+           setCities(prevState => [city, ...prevState]);
+    };
 
     return(
         <Container>
-            {cities.map((city, index) => {
-
-                return (
-                <CityItem city={city} key={index}/>
-                )
-            })}
-
-                
+            <CitiesForm onNewCity={citiesUpdateHandler} />
+            <CitiesList citiesData={cities}/>
         </Container>
     )
 }

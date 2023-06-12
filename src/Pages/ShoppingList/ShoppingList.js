@@ -55,6 +55,9 @@ function ShoppingList() {
   };
 
   const itemDoneHandler = (index) => {
+    if (index === undefined) {
+        return;
+      }
     setProduct(prevState => {
         const prevShoppingItem = prevState[index];
         const newEditItem = {...prevShoppingItem};

@@ -1,14 +1,23 @@
-.city-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 30%;
-    padding-left: 20px;
-    margin-bottom: 20px;
+.cities-wrapper { 
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
 }
 
-.capital {
-    background-color: rgb(250, 190, 208);
+.city-item {
+    width: 40%;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    background-color: white;
     box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-}
+    }
+    
+    .capital {
+        background-color: rgb(250, 190, 208);
+    }
+
+    .odd-cities .city-item:last-child {
+        width: 100%;
+      }
