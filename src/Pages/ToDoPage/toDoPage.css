@@ -4,7 +4,7 @@
 }
 
 .todo-item {
-    background-color: rgb(255, 255, 151);
+    background-color: rgb(252, 252, 176);
     box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     list-style-type: none;
@@ -12,6 +12,13 @@
     
 }
 
-.todo-item li{
+.todo-item li {
     list-style-type: none;
+}
+.item-done {
+    background-color: rgb(200, 243, 179);
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    list-style-type: none;
+    width: 30%;
 }

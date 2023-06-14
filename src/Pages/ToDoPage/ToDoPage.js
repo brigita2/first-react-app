@@ -1,6 +1,5 @@
 import Container from "../../Components/Container/Container";
 import ToDoList from "./Components/ToDoList";
-// import ToDoItem from "./Components/ToDoItem";
 import './toDoPage.css';
 import { useState } from "react";
 
@@ -31,6 +30,7 @@ function ToDoPage () {
     const [date, setData] = useState('');
     const [description, setDescription] = useState('');
     const [dueDate, setDueData] = useState('');
+
 
     const createToDoItemHandler = (event) => {
         event.preventDefault();
