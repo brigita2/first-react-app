@@ -5,6 +5,7 @@ import ProgramsPage from "./Pages/CodeAcademyProgramsPage/ProgramsPage/ProgramsP
 import CounterPage from './Pages/CounterPage/CounterPage';
 import ShoppingList from './Pages/ShoppingList/ShoppingList';
 import CitiesPage from './Pages/CitiesPage/CitiesPage';
+import ToDoPage from './Pages/ToDoPage/ToDoPage';
 
 
 function App() {
@@ -40,6 +41,10 @@ function App() {
           <li className='nav-item'>
             <NavLink to='/cities' className='nav-link'>Cities Page</NavLink>
           </li>
+
+          <li className='nav-item'>
+            <NavLink to='/to-do' className='nav-link'>To do Page</NavLink>
+          </li>
         </ul>
       </nav>
 
@@ -51,6 +56,7 @@ function App() {
         <Route path='/counter' element={<CounterPage />} />
         <Route path='/shopping-list' element={<ShoppingList />} />
         <Route path='/cities' element={<CitiesPage />} />
+        <Route path='/to-do' element={<ToDoPage />} />
         <Route path='*' element={
           <><h1>404 error. Page not found</h1><Link to='/'>Go Back to Home Page</Link></>
         }/>

@@ -1,0 +1,17 @@
+.list-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.todo-item {
+    background-color: rgb(255, 255, 151);
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    list-style-type: none;
+    width: 30%;
+    
+}
+
+.todo-item li{
+    list-style-type: none;
+}

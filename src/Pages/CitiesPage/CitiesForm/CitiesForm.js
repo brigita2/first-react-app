@@ -21,6 +21,7 @@ function CitiesForm ({ onNewCity }) {
                 country: country,
             },
             touristAttractions: touristAttractions.split(',').map(attraction => attraction.trim()),
+            isCapital: isCapital,
         };
 
         onNewCity(newCityItem);
