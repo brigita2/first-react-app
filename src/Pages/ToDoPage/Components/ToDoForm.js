@@ -1,12 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function ToDoForm ({ onNewTask }) {
-
+function ToDoForm ({ onNewTask, editData }) {
     const [title, setTitle] = useState('');
     const [date, setData] = useState('');
     const [description, setDescription] = useState('');
     const [dueDate, setDueData] = useState('');
+    
+    useEffect(() => {
+        if (editData) {
+            setTitle(editData.title);
+            setDescription(editData.description);
+            setDueData(editData.dueDate)
+        } 
 
+    },[editData]);
 
     const createToDoItemHandler = (event) => {
         event.preventDefault();
@@ -20,23 +27,39 @@ function ToDoForm ({ onNewTask }) {
         // const fullDate = `${year}-${month}-${day}`;
         const fullDate = date.toISOString().slice(0, 10);
 
-        const newTask = {
-            id: Math.random(),
-            title: title,
-            date: fullDate,
-            description: description,
-            dueDate: dueDate,
-            done: false,
+        let newTask = {};
+
+        if (editData) {
+                newTask = {
+                id: editData.id,
+                title: title,
+                date: editData.date,
+                description: description,
+                dueDate: dueDate,
+                done: editData.done,
+            }
+        } else {
+                newTask = {
+                id: Math.random(),
+                title: title,
+                date: fullDate,
+                description: description,
+                dueDate: dueDate,
+                done: false,
+            }
         }
 
-        // console.log(newTask)
         onNewTask(newTask);
+        setTitle('');
+        setDescription('');
+        setDueData('');
     }
     
     const titleHandler = (event) => setTitle(event.target.value);
     const dataHandler = (event) => setData(event.target.value);
     const descriptionHandler = (event) => setDescription(event.target.value);
     const dueDataHandler = (event) => setDueData(event.target.value);
+
 
 
     return (
@@ -56,7 +79,9 @@ function ToDoForm ({ onNewTask }) {
                     <input type="date" id="due-data" value={dueDate} onChange={dueDataHandler}></input>
                 </div>
 
-                <input type="submit" value="Create task" />
+                <div>
+                <button type="submit" id="todo-submit" name="todo-submit">{editData ? 'Edit task' : 'Create new task'}</button>
+                </div>
             </form>
     )
 }
