@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { v4 as uuid } from "uuid";
 
 function ToDoForm ({ onNewTask, editData }) {
     const [title, setTitle] = useState('');
@@ -37,10 +38,11 @@ function ToDoForm ({ onNewTask, editData }) {
                 description: description,
                 dueDate: dueDate,
                 done: editData.done,
+                updateDate: fullDate,
             }
         } else {
                 newTask = {
-                id: Math.random(),
+                id: uuid(),
                 title: title,
                 date: fullDate,
                 description: description,

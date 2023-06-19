@@ -6,6 +6,7 @@ import CounterPage from './Pages/CounterPage/CounterPage';
 import ShoppingList from './Pages/ShoppingList/ShoppingList';
 import CitiesPage from './Pages/CitiesPage/CitiesPage';
 import ToDoPage from './Pages/ToDoPage/ToDoPage';
+import ChuckNorrisPage from './Pages/ChuckNorrisPage/ChuckNorrisPage';
 
 
 function App() {
@@ -45,6 +46,10 @@ function App() {
           <li className='nav-item'>
             <NavLink to='/to-do' className='nav-link'>To do Page</NavLink>
           </li>
+
+          <li className='nav-item'>
+            <NavLink to='/api/chuck-norris' className='nav-link'>Chuck API Page</NavLink>
+          </li>
         </ul>
       </nav>
 
@@ -57,6 +62,7 @@ function App() {
         <Route path='/shopping-list' element={<ShoppingList />} />
         <Route path='/cities' element={<CitiesPage />} />
         <Route path='/to-do' element={<ToDoPage />} />
+        <Route path='/api/chuck-norris' element={<ChuckNorrisPage />} />
         <Route path='*' element={
           <><h1>404 error. Page not found</h1><Link to='/'>Go Back to Home Page</Link></>
         }/>

@@ -3,13 +3,14 @@ import ToDoForm from "./Components/ToDoForm";
 import ToDoList from "./Components/ToDoList";
 import './toDoPage.css';
 import { useState } from "react";
+import { v4 as uuid } from "uuid";
 
 
 function ToDoPage () {
 
     let tasksList = [
         {   
-            id: Math.random(),
+            id: uuid(),
             date: '2023-06-12',
             title: 'Pavadinimas',
             description: 'Description',
@@ -17,7 +18,7 @@ function ToDoPage () {
             done: false,
         },
         {
-            id: Math.random(),
+            id: uuid(),
             date: '2023-10-01',
             title: 'Pavadinimas 2',
             description: 'Description 2',
@@ -28,12 +29,21 @@ function ToDoPage () {
     const [toDos, setToDos] = useState(tasksList);
     const [editTodo, setEditTodo] = useState(null);
 
-    const toDoUpdateHandler = (toDo) => {
-        if (editTodo) {
-            console.log(toDo)
+    const toDoUpdateHandler = (todo) => {
+        if (editTodo) {     
+            setToDos(prevState => {
+                const editId = todo.id;
+                const editIdex = toDos.findIndex(todoItem => todoItem.id === editId);
+                const newState = prevState.toSpliced(editIdex, 1, todo);
+
+                return newState;
+            });
+
+            
+            
         } else {
             setToDos(prevState => {
-                const newState = [toDo, ...prevState];
+                const newState = [todo, ...prevState];
                 return newState;
             })     
         }
