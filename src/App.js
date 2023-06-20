@@ -8,6 +8,8 @@ import CitiesPage from './Pages/CitiesPage/CitiesPage';
 import ToDoPage from './Pages/ToDoPage/ToDoPage';
 import ChuckNorrisPage from './Pages/ChuckNorrisPage/ChuckNorrisPage';
 import DogsApi from './Pages/DogsApiPage/DogsApi';
+import AiPage from './Pages/AIApiPage/AiPage';
+import Api from './Pages/ApiPage/Api'
 
 
 function App() {
@@ -49,11 +51,18 @@ function App() {
           </li>
 
           <li className='nav-item'>
+            <NavLink to='/api' className='nav-link'>API Projects Page</NavLink>
+          </li>
+
+          <li className='nav-item'>
             <NavLink to='/api/chuck-norris' className='nav-link'>Chuck API Page</NavLink>
           </li>
 
           <li className='nav-item'>
             <NavLink to='/api/dogs' className='nav-link'>Dogs Page</NavLink>
+          </li>
+          <li className='nav-item'>
+            <NavLink to='/api/ai' className='nav-link'>AI Page</NavLink>
           </li>
         </ul>
       </nav>
@@ -67,8 +76,11 @@ function App() {
         <Route path='/shopping-list' element={<ShoppingList />} />
         <Route path='/cities' element={<CitiesPage />} />
         <Route path='/to-do' element={<ToDoPage />} />
+        <Route path='/api' element={<Api />} />
         <Route path='/api/chuck-norris' element={<ChuckNorrisPage />} />
         <Route path='/api/dogs' element={<DogsApi />} />
+        <Route path='/api/ai' element={<AiPage />} />
+
         <Route path='*' element={
           <><h1>404 error. Page not found</h1><Link to='/'>Go Back to Home Page</Link></>
         }/>
