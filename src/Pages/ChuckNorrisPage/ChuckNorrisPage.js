@@ -1,3 +1,4 @@
+import { BeatLoader } from "react-spinners";
 import Container from "../../Components/Container/Container"
 import { useEffect, useState } from "react";
 
@@ -70,7 +71,7 @@ const ChuckNorrisPage = () => {
 
             <button onClick={randomJokeHandler}>Get a random Joke</button>
          </div>
-        ) : 'Loading...'}
+        ) : <BeatLoader color="#341881" size={20}/>}
     </Container>
   )
 }
