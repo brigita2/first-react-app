@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { LOCAL_API_URL } from "../../config";
 import { Link } from "react-router-dom";
 import Container from "../../Components/Container/Container";
+import axios from "axios";
 
 const UsersPage = () => {
 
   const [users, setUsers] = useState([]);
+  const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         fetch(LOCAL_API_URL + '/users')
@@ -13,7 +15,7 @@ const UsersPage = () => {
         .then(data => {
           setUsers(data);
         })
-    }, [])
+    }, []);
     
 
   return (

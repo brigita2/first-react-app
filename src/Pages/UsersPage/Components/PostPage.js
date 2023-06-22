@@ -9,13 +9,19 @@ const PostPage = () => {
 
   const [post, setPost] = useState(null);
   const [postDeleted, setPostDeleted] = useState(false);
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     axios.get(`${LOCAL_API_URL}/posts/${id}?_expand=user`)
     .then(res => setPost(res.data));
   }, [id]);
 
-  
+  useEffect(() => {
+    axios.get(`${LOCAL_API_URL}/posts/${id}?_embed=comments`)
+    .then(res => setComments(res.data.comments));
+  }, [id]);
+
+  console.log(comments)
   if (!post) {
     return '';
   }
@@ -49,6 +55,19 @@ const PostPage = () => {
             </div>
           </>
       )}
+      <div>
+        <h2>Comments:</h2>
+          {comments && comments.map(comment => {
+            return (
+            <>
+              <h3>Title: {comment.name}</h3>
+              <p>Comment: {comment.body}</p>
+              <p>{comment.email}</p>
+
+            </>
+            )
+          })}
+      </div>
     </Container>
   )
 }

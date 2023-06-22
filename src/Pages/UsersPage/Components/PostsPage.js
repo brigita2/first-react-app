@@ -16,7 +16,7 @@ const PostsPage = () => {
 
     const createPost = () => {
         
-        fetch('http://localhost:3000/posts', {
+        fetch(`${LOCAL_API_URL}`, {
             method: 'POST',
             body: JSON.stringify({
               title: 'Labas',
