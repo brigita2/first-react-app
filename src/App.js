@@ -14,6 +14,7 @@ import UsersPage from './Pages/UsersPage/UsersPage';
 import UserPage from './Pages/UsersPage/Components/UserPage';
 import PostsPage from './Pages/UsersPage/Components/PostsPage';
 import PostPage from './Pages/UsersPage/Components/PostPage';
+import CreatePost from './Pages/UsersPage/Components/CreatePost';
 
 
 function App() {
@@ -108,6 +109,7 @@ function App() {
         <Route path='/json/users/:id' element={<UserPage />} />
         <Route path='/json/posts' element={<PostsPage />} />
         <Route path='/json/posts/:id' element={<PostPage />} />
+        <Route path='/json/posts/create' element={<CreatePost />} />
 
         <Route path='*' element={
           <><h1>404 error. Page not found</h1><Link to='/'>Go Back to Home Page</Link></>

@@ -35,11 +35,12 @@ const PostsPage = () => {
   return (
     <Container>
         <button onClick={createPost}>Create</button>
+        <Link to={'/json/posts/create'}>Create a new post</Link>
     <div>
         <ul>
             {posts.map((post) => {
                 return (<li key={post.id}>
-                    <Link to={'/json/posts/' + post.id}>{post.title}</Link>
+                    <Link to={'/json/posts/' + post.id}>{post.id} ID. {post.title}</Link>
                 </li>)
             })}
         </ul>

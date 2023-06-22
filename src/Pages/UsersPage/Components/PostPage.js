@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Container from "../../../Components/Container/Container";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -8,6 +8,7 @@ const PostPage = () => {
   const { id } = useParams();
 
   const [post, setPost] = useState(null);
+  const [postDeleted, setPostDeleted] = useState(false);
 
   useEffect(() => {
     axios.get(`${LOCAL_API_URL}/posts/${id}?_expand=user`)
@@ -18,11 +19,36 @@ const PostPage = () => {
   if (!post) {
     return '';
   }
+
+  const deleteHandler = () => {
+    // fetch(`${LOCAL_API_URL}/posts/${id}`, {
+    //   method: 'DELETE',
+    // })
+    // .then(res => res.json())
+    // .then(data => setPostDeleted(true));
+    axios.delete(`${LOCAL_API_URL}/posts/${id}`)
+    .then(data => setPostDeleted(true))
+  }
+
   return (
     <Container>
-    <h1>{post.title}</h1>
-    <p>{post.body}</p>
-    <span>User: {post.user.name}</span>
+      {postDeleted ? (
+        <>
+          <h2>Post deleted</h2>
+          <Link to='/json/posts'>Go back to posts list</Link>
+        </>
+        ) : (
+          <>
+            <div>
+              <h1>{post.title}</h1>
+              <p>{post.body}</p>
+              <span>User: {post.user.name}</span>
+            </div>
+            <div>
+              <button onClick={deleteHandler}>Delete Post</button>
+            </div>
+          </>
+      )}
     </Container>
   )
 }
